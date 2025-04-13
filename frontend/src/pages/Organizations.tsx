@@ -1,5 +1,5 @@
 import Sidebar from '../components/Sidebar';
-import Table from '../components/Table';
+import Table from '../app/elements/Table';
 import { useOrganizations } from '../hooks/organization';
 
 export default function Organizations() {
