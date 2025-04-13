@@ -23,8 +23,8 @@ def create_access_token(data: dict, expires_delta=None):
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
-def authenticate_user(email: str, password: str, session: Session):
-    user = session.exec(select(User).where(User.email == email)).first()
+def authenticate_user(username: str, password: str, session: Session):
+    user = session.exec(select(User).where(User.username == username)).first()
     if not user or not verify_password(password, user.password):
         return None
     return user
@@ -42,3 +42,6 @@ def get_current_user(token: str = Depends(oauth2_scheme), session: Session = Dep
     if user is None:
         raise credentials_exception
     return user
+
+def hash_password(password: str) -> str:
+    return pwd_context.hash(password)

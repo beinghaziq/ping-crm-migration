@@ -17,12 +17,6 @@ const columns = ['name', 'city', 'phone'];
         <h1 className="text-3xl font-bold mb-4 text-black">Organizations</h1>
 
         <div className="flex justify-between items-center mb-4">
-        <input
-            type="text"
-            placeholder="Search..."
-            className="px-4 py-2 border rounded-lg w-1/3"
-          />
-
           <button className="!bg-blue-400 text-black px-4 py-2 rounded">Create Organization</button>
         </div>
 

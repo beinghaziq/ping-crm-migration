@@ -1,14 +1,14 @@
 backend/__pycache__/
 backend/env/
-backend/.venv/
+backend/venv/
 *.pyc
 frontend/dist/
 frontend/build/
 backend/build/
 *.log
 frontend/node_modules/
-*.env
-.env.*
+backend/.env
+frontend/.env
 frontend/.env.local
 backend/.env.local
 coverage/
