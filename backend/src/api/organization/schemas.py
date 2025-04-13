@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class OrganizationCreateInput(BaseModel):
     name: str
     city: str
@@ -8,6 +9,7 @@ class OrganizationCreateInput(BaseModel):
     postal_code: str
     phone: str
     email: str
+
 
 class OrganizationUpdateInput(BaseModel):
     name: str

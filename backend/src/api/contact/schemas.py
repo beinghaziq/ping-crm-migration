@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class ContactCreateInput(BaseModel):
     first_name: str
     last_name: str
@@ -10,6 +11,7 @@ class ContactCreateInput(BaseModel):
     phone: str
     email: str
     organization_id: str
+
 
 class ContactUpdateInput(BaseModel):
     first_name: str

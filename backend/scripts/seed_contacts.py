@@ -2,6 +2,7 @@ from src.api.contact.models import Contact
 from src.database import engine
 from sqlmodel import Session
 
+
 def seed_contacts():
     with Session(engine) as db:
         try:
@@ -37,6 +38,7 @@ def seed_contacts():
         except Exception as e:
             db.rollback()
             print(f"❌ Error seeding contacts: {e}")
+
 
 if __name__ == "__main__":
     seed_contacts()

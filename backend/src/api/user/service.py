@@ -1,7 +1,7 @@
 from fastapi import Depends
 from src.database import get_session
 from src.api.user.models import User
-from sqlmodel import  select, Session
+from sqlmodel import select, Session
 
 
 class UserService:
@@ -12,14 +12,14 @@ class UserService:
         statement = select(User)
         users = self.session.exec(statement).all()
         return users
-    
+
     def create_user(self, user_create_input):
         user = User(**user_create_input.model_dump())
         self.session.add(user)
         self.session.commit()
         self.session.refresh(user)
         return user
-    
+
     def get_by_id(self, user_id: int):
         statement = select(User).where(User.id == user_id)
         user = self.session.exec(statement).one_or_none()
@@ -36,11 +36,10 @@ class UserService:
         self.session.commit()
         self.session.refresh(user)
         return user
-    
+
     def delete_user(self, user_id):
         statement = select(User).where(User.id == user_id)
         user = self.session.exec(statement).one()
         self.session.delete(user)
         self.session.commit()
         return user
-    

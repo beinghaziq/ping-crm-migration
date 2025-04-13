@@ -10,21 +10,25 @@ class ContactService:
         self.session = session
 
     def get_contacts(self):
-        statement = select(Contact, Organization.name).join(Organization, Organization.id == Contact.organization_id)
+        statement = select(Contact, Organization.name).join(
+            Organization, Organization.id == Contact.organization_id
+        )
         contacts_with_org = self.session.exec(statement).all()
-        
+
         result = []
         for contact, org_name in contacts_with_org:
-            result.append({
-                "contact_id": contact.id,
-                "first_name": contact.first_name,
-                "last_name": contact.last_name,
-                "phone": contact.phone,
-                "city": contact.city,
-                "email": contact.email,
-                "organization_name": org_name  # Add organization name to the result
-            })
-        
+            result.append(
+                {
+                    "contact_id": contact.id,
+                    "first_name": contact.first_name,
+                    "last_name": contact.last_name,
+                    "phone": contact.phone,
+                    "city": contact.city,
+                    "email": contact.email,
+                    "organization_name": org_name,  # Add organization name to the result
+                }
+            )
+
         return result
 
     def create_contact(self, contact_create_input):

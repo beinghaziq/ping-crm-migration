@@ -10,8 +10,8 @@ def seed_users():
             users = [
                 User(
                     email="john.doe@example.com",
-                    username='johndoe',
-                    password=hash_password('secret')
+                    username="johndoe",
+                    password=hash_password("secret"),
                 )
             ]
 
@@ -22,6 +22,7 @@ def seed_users():
         except Exception as e:
             db.rollback()
             print(f"❌ Error seeding users: {e}")
+
 
 if __name__ == "__main__":
     seed_users()

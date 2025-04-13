@@ -1,6 +1,7 @@
-from src.api.organization.models import Organization 
+from src.api.organization.models import Organization
 from src.database import engine
 from sqlmodel import Session
+
 
 def seed_organizations():
     with Session(engine) as db:
@@ -33,6 +34,7 @@ def seed_organizations():
         except Exception as e:
             db.rollback()
             print(f"❌ Error seeding organizations: {e}")
+
 
 if __name__ == "__main__":
     seed_organizations()
