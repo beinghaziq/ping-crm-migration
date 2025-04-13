@@ -1,11 +1,12 @@
-from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi import Depends, HTTPException, Request
+from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import datetime, timedelta
 from sqlmodel import select, Session
 from src.api.user.models import User
 from src.database import get_session
+from fastapi.security.utils import get_authorization_scheme_param
 
 SECRET_KEY = "supersecret"
 ALGORITHM = "HS256"
@@ -29,18 +30,25 @@ def authenticate_user(username: str, password: str, session: Session):
         return None
     return user
 
-def get_current_user(token: str = Depends(oauth2_scheme), session: Session = Depends(get_session)):
-    credentials_exception = HTTPException(status_code=401, detail="Invalid token")
+def get_current_user(request: Request, session: Session = Depends(get_session)):
+    auth: str = request.headers.get("Authorization")
+    scheme, token = get_authorization_scheme_param(auth)
+
+    if scheme.lower() != "bearer" or not token:
+        raise HTTPException(status_code=401, detail="Invalid or missing token")
+
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        email = payload.get("sub")
-        if email is None:
-            raise credentials_exception
+        username = payload.get("sub")
+        if username is None:
+            raise HTTPException(status_code=401, detail="Invalid token payload")
     except JWTError:
-        raise credentials_exception
-    user = session.exec(select(User).where(User.email == email)).first()
+        raise HTTPException(status_code=401, detail="Invalid token")
+
+    user = session.exec(select(User).where(User.username == username)).first()
     if user is None:
-        raise credentials_exception
+        raise HTTPException(status_code=401, detail="User not found")
+
     return user
 
 def hash_password(password: str) -> str:

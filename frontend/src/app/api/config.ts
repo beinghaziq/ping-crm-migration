@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { getToken } from '../../utils/session';
 
 export const ITags = {
     CONTACT_LIST: 'CONTACT_LIST',
@@ -14,7 +15,7 @@ export const baseApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:8000',
         prepareHeaders: (headers) => {
-            const token = localStorage.getItem('authToken');
+            const token = getToken()
             if (token) {
                 headers.set('Authorization', `Bearer ${token}`);
             }

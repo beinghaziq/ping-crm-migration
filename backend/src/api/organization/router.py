@@ -11,7 +11,7 @@ router = APIRouter()
 @router.get("/")
 async def read_organizations(
     organization_service: OrganizationService = Depends(),
-    # current_user: User = Depends(get_current_user)
+    current_user: User = Depends(get_current_user)
     ):
     organizations = organization_service.get_organizations()
     return organizations
