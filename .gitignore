@@ -6,7 +6,6 @@ frontend/dist/
 frontend/build/
 backend/build/
 *.log
-frontend/node_modules/
 backend/.env
 frontend/.env
 frontend/.env.local
@@ -15,3 +14,4 @@ coverage/
 .vscode/
 .DS_Store
 Thumbs.db
+**/node_modules/
