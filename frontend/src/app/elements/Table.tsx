@@ -43,7 +43,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
 
         <div className="flex gap-2">
           <select
-            className="p-2 border border-gray-300 text-gray-700 rounded"
+            className="p-2 border border-gray-300 w-25 text-gray-700 rounded"
             value={filterColumn}
             onChange={(e) => {
               setFilterColumn(e.target.value);

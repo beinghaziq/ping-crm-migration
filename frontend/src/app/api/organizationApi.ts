@@ -13,15 +13,15 @@ export const organizationApi = baseApi.injectEndpoints({
     }),
     createOrganization: builder.mutation<Organization, OrganizationCreateInput>({
       query: (body) => ({
-        url: `/`,
+        url: `/organizations`,
         method: 'POST',
         body,
       }),
-      invalidatesTags: [ITags.ORGANIZATION],
+      invalidatesTags: [ITags.ORGANIZATION_LIST],
     }),
     updateOrganization: builder.mutation<Organization, { id: number; data: OrganizationUpdateInput }>({
       query: ({ id, data }) => ({
-        url: `/${id}`,
+        url: `/organizations/${id}`,
         method: 'PUT',
         body: data,
       }),
@@ -29,7 +29,7 @@ export const organizationApi = baseApi.injectEndpoints({
     }),
     deleteOrganization: builder.mutation<{ success: boolean }, number>({
       query: (id) => ({
-        url: `/${id}`,
+        url: `/organizations/${id}`,
         method: 'DELETE',
       }),
       invalidatesTags: [ITags.ORGANIZATION],

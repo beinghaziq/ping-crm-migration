@@ -10,14 +10,6 @@ export default function Sidebar() {
         <ul className="space-y-4 p-4">
           <li>
             <Link
-              to="/"
-              className="block py-2 px-4 rounded hover:bg-blue-600"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
               to="/organizations"
               className="block py-2 px-4 rounded hover:bg-blue-600"
             >
