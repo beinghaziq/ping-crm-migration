@@ -13,7 +13,7 @@ export const ITags = {
 export const baseApi = createApi({
     reducerPath: 'baseApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:8000',
+        baseUrl: import.meta.env.VITE_API_URL,
         prepareHeaders: (headers) => {
             const token = getToken()
             if (token) {
@@ -22,7 +22,7 @@ export const baseApi = createApi({
             return headers;
         },
     }),
-    endpoints: (builder) => ({}),
+    endpoints: (_builder) => ({}),
     tagTypes: Object.values(ITags) as ITagsType[],
 });
 
