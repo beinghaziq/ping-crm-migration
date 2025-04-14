@@ -36,14 +36,14 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
         <input
           type="text"
           placeholder="Search..."
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded text-gray-700"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
 
         <div className="flex gap-2">
           <select
-            className="p-2 border border-gray-300 rounded"
+            className="p-2 border border-gray-300 text-gray-700 rounded"
             value={filterColumn}
             onChange={(e) => {
               setFilterColumn(e.target.value);
@@ -58,7 +58,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
           </select>
 
           <select
-            className="p-2 border border-gray-300 rounded"
+            className="p-2 border border-gray-300 rounded text-gray-700"
             value={filterValue}
             onChange={(e) => setFilterValue(e.target.value)}
           >

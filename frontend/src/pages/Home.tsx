@@ -30,23 +30,23 @@ export default function Home() {
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
         <div className="mb-4">
-          <label className="block mb-1 text-sm font-medium">Username</label>
+          <label className="block mb-1 text-left text-sm text-gray-700 font-medium">Username</label>
           <input
             type="text"
             value={username || DEFAULT_USERNAME}
             onChange={(e) => setUsername(e.target.value)}
             required
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full text-gray-700 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
         <div className="mb-6">
-          <label className="block mb-1 text-sm font-medium">Password</label>
+          <label className="block mb-1 text-left text-sm text-gray-700 font-medium">Password</label>
           <input
             type="password"
             value={password || DEFAULT_PASSWORD}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
         {error && <p className="text-red-500 text-sm mb-4">Login failed</p>}
