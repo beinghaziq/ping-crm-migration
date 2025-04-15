@@ -9,6 +9,7 @@ This application is a migration of PingCRM from Ruby on Rails to FastAPI, React.
 - Contacts: Contact complete CRUD is added on backend and listing on frontend, Accociated organization is also displayed.
 - Search: Searching on both organization and contacts is integrated.
 - Filters: Filtering on both organization and contacts data is integrated.
+- Code Formatting: Black is added for code formatting
 
 <img width="659" alt="Screenshot 2025-04-15 at 2 45 46 PM" src="https://github.com/user-attachments/assets/e4e0401d-0dbc-49fc-81d8-20ea3786fd4f" />
 <img width="1226" alt="Screenshot 2025-04-15 at 2 47 14 PM" src="https://github.com/user-attachments/assets/b04d7754-db47-4d4a-9679-15a1fc3c18d6" />
@@ -64,4 +65,17 @@ This application is a migration of PingCRM from Ruby on Rails to FastAPI, React.
 
 https://ping-crm-migration.onrender.com/docs
 
+## Deployment
+Backend: Rennder
+Frontend: Vercel
+Database: supabase
+
+## Features that are missing or nice to have
+- Eslint can be added
+- I have added user creation and JWT generation but it needs to be properly handled with HTTP only cookies and sessions.
+- Testing using pytest and react testing library.
+- Pre commit hook for formatting and tests
+- Loaders and notifications
+- Missing Validations
+- Docker
 
