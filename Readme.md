@@ -17,6 +17,8 @@ This application is a migration of PingCRM from Ruby on Rails to FastAPI, React.
 <img width="715" alt="Screenshot 2025-04-15 at 2 50 18 PM" src="https://github.com/user-attachments/assets/40f9a69d-119e-4652-af9d-dc0aca541a39" />
 <img width="1314" alt="Screenshot 2025-04-15 at 2 51 03 PM" src="https://github.com/user-attachments/assets/04d967ea-f19f-4761-b653-d51c1659c664" />
 
+## Demo
+https://ping-crm-migration.vercel.app/
 
 # Build With
 ## Backend
