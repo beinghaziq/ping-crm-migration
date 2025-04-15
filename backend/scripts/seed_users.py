@@ -14,9 +14,9 @@ def seed_users():
                     password=hash_password("secret"),
                 )
             ]
-
-            db.add_all(users)
-            db.commit()
+            print(users)
+            # db.add_all(users)
+            # db.commit()
             print("✅ Seeded users successfully!")
 
         except Exception as e:

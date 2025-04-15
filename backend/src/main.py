@@ -5,6 +5,7 @@ from src.api.organization.router import router as organization_router
 from src.api.contact.router import router as contact_router
 from src.api.session.router import router as session_router
 from fastapi.middleware.cors import CORSMiddleware
+from src.config import settings
 
 app = FastAPI()
 
@@ -15,7 +16,7 @@ app.include_router(session_router, prefix="", tags=["session"])
 
 
 origins = [
-    "http://localhost:5173",
+    settings.FRONTEND_DOMAIN
 ]
 
 app.add_middleware(
