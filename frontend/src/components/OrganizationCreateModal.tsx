@@ -86,13 +86,13 @@ export default function OrganizationCreateModal({
                 <div className="flex justify-end mt-8 space-x-4">
                     <button
                         onClick={handleSubmit}
-                        className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
+                        className="!bg-gray-600 text-white px-6 py-2 rounded-md !hover:bg-gray-700 transition"
                     >
                         Submit
                     </button>
                     <button
                         onClick={onClose}
-                        className="bg-gray-200 text-gray-100 px-6 py-2 rounded-md hover:bg-gray-300 transition"
+                        className="!bg-gray-500 text-gray-100 px-6 py-2 rounded-md !hover:bg-gray-300 transition"
                     >
                         Cancel
                     </button>
