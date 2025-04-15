@@ -1,16 +1,14 @@
-# Sample Readme Project
+# Ping CRM Migration
 
-This project is a simple web application built with Ruby on Rails and Dockerized for development ease. It uses PostgreSQL as its database.
-
-In this app I am getting the products data from the dummyjson api and using that I have implemented a functionality for users to share their thoughts about a specific product by adding a comment to it. I am saving the users and comments data in our database, so that it can be displayed later to other users on the product show page. A user can also edit or delete his/her comments.
+This application is a migration of PingCRM from Ruby on Rails to FastAPI, React.js, and TypeScript.
 
 ## Features (Can add schema or relationships as well)
 
-- Product: Represents a product fetched from the dummyjson API (Not storing it in our DB).
-- Comment: Represents user comments. Each comment belongs to a product.
-- List Products: View a list of products fetched from the dummyjson API.
-- View Product: Click on a product title to go to show page.
-- Add Comment to Product: Users can add comments to a specific product.
+- Autentication: Jwt based authentication is added.
+- Organzation: Organizationn complete CRUD is added on backend and listing and creation on frontend.
+- Contacts: Contact complete CRUD is added on backend and listing on frontend, Accociated organization is also displayed.
+- Search: Searching on both organization and contacts is integrated.
+- Filters: Filtering on both organization and contacts data is integrated.
 
 `(Ideally, a demo video should be put here.)`
 
