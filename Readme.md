@@ -68,9 +68,9 @@ https://ping-crm-migration.vercel.app/
 https://ping-crm-migration.onrender.com/docs
 
 ## Deployment
-Backend: Rennder
-Frontend: Vercel
-Database: supabase
+- Backend: Render
+- Frontend: Vercel
+- Database: supabase
 
 ## Features that are missing or nice to have
 - Eslint can be added
