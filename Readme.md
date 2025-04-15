@@ -43,7 +43,7 @@ https://ping-crm-migration.vercel.app/
 
 1. **Clone the Repository**:
    ```bash
-   git clone [<repository-url>](https://github.com/beinghaziq/ping-crm-migration.git)
+   git clone https://github.com/beinghaziq/ping-crm-migration.git
    cd repo
    ```
 2. **Setup TTAB**:
