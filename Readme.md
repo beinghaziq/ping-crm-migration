@@ -2,7 +2,7 @@
 
 This application is a migration of PingCRM from Ruby on Rails to FastAPI, React.js, and TypeScript.
 
-## Features (Can add schema or relationships as well)
+## Features
 
 - Autentication: Jwt based authentication is added.
 - Organzation: Organizationn complete CRUD is added on backend and listing and creation on frontend.
@@ -47,11 +47,15 @@ This application is a migration of PingCRM from Ruby on Rails to FastAPI, React.
    ```bash
       npm install ttab
    ```
-3. **Setup Database and Seed**:
+3. **Setup ENVs**:
+   ```bash
+   bash scripts/setup-env.sh
+   ```
+4. **Setup Database and Seed**:
    ```bash
    bash scripts/setup-database.sh
    ```
-4. **Run both servers**:
+5. **Run both servers**:
    ```bash
    bash scripts/run-servers.sh
    ```
